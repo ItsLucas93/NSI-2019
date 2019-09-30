@@ -77,6 +77,9 @@ def SolEq2():
                       "valeurs. \n"
                       "Si vous entrez une valeur qui n'est pas une valeur numérique, le programme s'arêtera.\n").split(
         " ")
+    # Séparateur de deux entrée pour avoir deux valeurs différentes
+    # (Ici, un espace, qu'on peut remplacer par n'importe autre caractère tel que -)
+    # text = input().split(" ")
 
     print("Les valeurs entrées sont : A = [", value_eq2[0], "], B = [", value_eq2[1], "], C = [", value_eq2[2], "]")
 
