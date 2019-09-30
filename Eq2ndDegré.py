@@ -1,4 +1,4 @@
-# Auteurs : Lucas | Bilel 1ère 6 Persée
+# Auteurs : Lucas | Bilal 1ère 6 Persée
 # ----------------------------------------------------------
 # Sources :
 # x.split() = APPRENDRE LE PYTHON #4 ? LES LISTES Graven - Développement https://youtu.be/kyxF5eH3Kic?t=669
