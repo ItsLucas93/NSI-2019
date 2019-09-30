@@ -1,14 +1,5 @@
 # Auteurs : Lucas | Bilal 1ère 6 Persée
 # ----------------------------------------------------------
-# Sources :
-# x.split() = APPRENDRE LE PYTHON #4 ? LES LISTES Graven - Développement https://youtu.be/kyxF5eH3Kic?t=669
-# Racine carré = http://www.france-ioi.org/algo/course.php?idChapter=653&idCourse=2020
-# Courbes : https://courspython.com/introduction-courbes.html#definition-du-domaine-des-axes-xlim-et-ylim
-# Compréhension de liste : https://miamondo.org/le-langage-python/chapitre-10-la-comprehension-de-liste/
-
-# Séparateur de deux entrée pour avoir deux valeurs différentes
-# (Ici, un espace, qu'on peut remplacer par n'importe autre caractère tel que -)
-# text = input().split(" ")
 
 from math import *  # Import pour la fonction de racine carrée
 import numpy as np  # Import des modules pour tracer la courbe, attribution d'aliases (raccourcis de noms)
@@ -189,15 +180,15 @@ def main():  # Réalise une demande pour le choix de la fonction à executer.
     entree = input("Bonjour ! Quel est la fonction demandé ?"
                    "\n\n1 = SolEq1 : "
                    "Coder un fonction SolEqua1(a,b,c) qui retourne les valeurs des solutions et discriminant."
-                   "\n\n2 = SolEq 2 :"
+                   "\n\n2 = SolEq 2 : "
                    "Coder une fonction SolEqua2(liste) "
                    "qui retourne les valeurs des solutions et du discriminant sous forme de liste."
-                   "\n\n3 = fxcourbe :"
+                   "\n\n3 = fxcourbe : "
                    "Faire une recherche permettant de tracer une courbe défini comme f(x)=x+2"
                    "\n\n4 = listecomprehension : "
                    "Faire une recherche sur les listes en compréhension. "
                    "Analyser l'instruction suivante et dire l'intérêt d'une telle écriture."
-                   "\n\n5 = listeinitiale :"
+                   "\n\n5 = listeinitiale : "
                    "Proposer une autre écriture qui donne le même résultat. "
                    "\n\n-------------------------------------------------\nDemande = ")
     print("-------------------------------------------------")
@@ -215,7 +206,7 @@ def main():  # Réalise une demande pour le choix de la fonction à executer.
     if entree == 5:
         listeinitiale()
     else:
-        print("Erreur, le programme à mis find soit parce que la demande a été traité, soit que vous ayez rentrée une "
+        print("Erreur, le programme à mis fin soit parce que la demande a été traité, soit que vous ayez rentrée une "
               "valeur incorrect/demande inexistante. \nFin du programme.")
         print("-------------------------------------------------")
 
