@@ -206,7 +206,7 @@ def main():  # Réalise une demande pour le choix de la fonction à executer.
     if entree == 5:
         listeinitiale()
     else:
-        print("Erreur, le programme à mis fin soit parce que la demande a été traité, soit que vous ayez rentrée une "
+        print("Erreur, le programme a mis fin soit parce que la demande a été traité, soit que vous ayez rentrée une "
               "valeur incorrect/demande inexistante. \nFin du programme.")
         print("-------------------------------------------------")
 
