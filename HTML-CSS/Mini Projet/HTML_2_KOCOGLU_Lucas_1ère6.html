@@ -1,0 +1,123 @@
+<!--KOCOGLU Lucas 1ère6 Persée -->
+<!-- Page avec HTML et CSS -->
+<!-- Il est important de ne pas bouger la position de ce fichier .html par rapport aux autres fichiers étant donné qu'il est relié au dossier /img/ et au dossier /css/-->
+
+<!DOCTYPE html> <!--Déclaration du Code HTML -->
+<html lang="fr">
+
+<head> <!-- En tête du code, contenant les infos tels que l'encodage, le titre de la page, le référencement de l'emplacement des fichiers css, js, img, etc. -->
+
+	<title>L'histoire des langages de programmations moderne</title> 
+	<!-- Titre de la page -->
+	<meta charset="utf-8"> 
+	<!-- Encodage de la page -->
+	<link rel="icon" href="img/favicon.png"> 
+	<!-- Icon de la page, dans le dossier img, avec pour nom favicon.png -->
+	<!-- Cette image ne m'appartient pas/n'est pas de ma création, elle a été crée par "The oun project" publié avec la mention Creative Commons. Source : https://thenounproject.com/term/code/70816/ -->
+	<link rel="stylesheet" type="text/css" href="css/style.css"> 
+	<!-- Liason avec le fichier css -->
+
+</head>
+<!--J'ai décidé de créer des balises div pour regrouper les sections de la page-->
+<!-- Les noms inscrits dans les "class" des balises m'aide à repérer à quel endroit cette balise est censé être représenté sur la page-->
+<body>
+
+	<div class="head">
+		<div class="head_text">
+			<hr>
+			<h1 class="title">L'histoire des langages de programmations moderne.</h3>
+			<p class="subtitle">Voici l'histoire des langages de programmations les plus utilisés à notre époque.</p>
+			<hr>
+		</div>
+
+		<div class="head_image">
+			<img src="img/FriseChronologique.PNG" height="50%" width="50%" alt="Frise Chronologique des langages de programmations les plus utilisés."> 
+			<!-- J'ai redimensionné la page à l'aide de height et width (longueur et largeur) pour éviter que l'image occupe une trop grande partie de la page. alt-->
+		</div>
+	</div>
+
+
+	<div class="center">
+		<div class="C_Language">
+			<h2 class="title">• C – 1972, Co-développé par Dennis Ritchie, Bell Labs</h2>
+			<p class="text">C'est un langage de programmation généraliste, de bas niveau (C'est à dire qui ne fournit que peu d'abstraction par rapport au à la capacité du processeur de la machine d'exécuter une tâche). Inventé au début des années 1970, C’est encore l'un des langages les plus utilisés de nos jours.</p>
+		</div>
+		<div class="PYTHON_Language">
+			<h2 class="title">• Python – 20 Février 1991, par le néerlandais <a href="https://fr.wikipedia.org/wiki/Guido_van_Rossum" target="_blank" title="Redirection vers Wikipédia sur la page de Guido van Rossum.">Guido van Rossum</a></h2>
+			<!-- La balise <a> permet de rediriger vers une page extéerieur, target="_blank" permet de d'ouvrir la redirection sur une nouvelle page, title="" permet de mettre une information en surbillance lorsqu'on passe la souris sur le lien de redirection.-->
+			<p class="text">Python est un langage de programmation interprété (ayant pour tâche d'analyser, de traduire et d'exécuter les programmes écrits dans un langage informatique.) et multiplateformes. Il favorise la programmation impérative structurée, fonctionnelle et orientée objet. Le langage Python est placé sous une licence libre et fonctionne sur la plupart des plates-formes informatiques, des smartphones aux ordinateurs centraux11, de Windows à Unix avec notamment GNU/Linux en passant par macOS. Il est conçu pour optimiser la productivité des programmeurs en offrant des outils de haut niveau et une syntaxe simple à utiliser.</p>
+		</div>
+		<div class="HTML_Language">
+			<h2 class="title">• HTML – 1993, Organisation World Wide Web Consortium (W3C)</h2>
+			<p class="text">L’HyperText Markup Language, généralement abrégé HTML, est le langage de balisage conçu pour représenter les pages web. HTML permet également de structurer et de mettre en forme le contenu des pages, d’inclure des ressources multimédias dont des images, des formulaires de saisie et des programmes informatiques. Il permet de créer des documents interopérables avec des équipements très variés de manière conforme aux exigences de l’accessibilité du web. Il est souvent utilisé conjointement avec le langage de programmation JavaScript et CSS.</p>
+		</div>
+		<div class="PHP_Language">
+			<h2 class="title">• PHP – 1994, Rasmus Lerdorf</h2>
+			<p class="text">PHP est un langage de programmation principalement utilisé pour produire des pages Web dynamiques via un serveur HTTP, mais pouvant également fonctionner comme n'importe quel langage interprété de façon locale. PHP est un langage impératif orienté objet. PHP a permis de créer un grand nombre de sites web célèbres, comme Facebook, Wikipédia, Il est considéré comme une des bases de la création de sites web dits dynamiques mais également des applications web.</p>
+		</div>
+		<div class="JAVA_Language">
+			<h2 class="title">• Java – 23 mai 1995, James Gosling et Patrick Naughton</h2>
+			<p class="text">Java est un langage de programmation orienté objet créé par James Gosling et Patrick Naughton, présenté officiellement le 23 mai 1995 au SunWorld. La société SunWorld a été ensuite rachetée en 2009 par la société Oracle qui détient et maintient désormais Java. La particularité et l'objectif central de Java est que les logiciels écrits dans ce langage doivent être très facilement portables sur plusieurs systèmes d’exploitation tels que Unix, Windows, Mac OS ou GNU/Linux, avec peu ou pas de modifications, mais qui ont l'inconvénient d'être plus lourd à l'exécution (en mémoire et en temps processeur) à cause de sa machine virtuelle</p>
+		</div>
+		<div class="JS_Language">
+			<h2 class="title">• JS – 4 Décembre 1995, Brendan Eich</h2>
+			<p class="text">JavaScript est un langage de programmation de scripts principalement employé dans les pages web interactives mais aussi pour les serveurs avec l'utilisation de Node.js. JavaScript a été créé en 1995 par Brendan Eich. Avec les technologies HTML et CSS, JavaScript est parfois considéré comme l'une des technologies cœur du World Wide Web5. Le langage JavaScript permet des pages web interactives, et à ce titre est une partie essentielle des applications web.</p>
+		</div>
+		<div class="CSS_Language">
+			<h2 class="title">• CSS – 17 Décembre 1996, World Wide Web Consortium (W3C)</h2>
+			<p class="text">Les feuilles de style en cascade, généralement appelées CSS, forment un langage informatique qui décrit la présentation des documents HTML et XML. Les standards définissant CSS sont publiés par le World Wide Web Consortium (W3C). Introduit au milieu des années 1990, CSS devient couramment utilisé dans la conception de sites web et bien pris en charge par les navigateurs web dans les années 2000.</p>
+		</div>
+		<div class="SWIFT_Language">
+			<h2 class="title">• <a href="https://swift.org/about/#swiftorg-and-open-source" target="_blank" title="Redirection vers le site Swift">Swift</a> - 2014, Apple</h2>
+			<p class="text">Le Langage Swift est un langage de programmation développé par Apple dont le début de développement a été commencé en 2010, puis publié lors de la WWDC (Conférence des développeurs du monde entier organisé par Apple) en 2014, ayant pour objectif d’être : 
+			<li class="li_text">
+				Expressif (Swift offre une syntaxe agréable à utiliser, avec les fonctionnalités modernes attendues par les développeurs.), 
+			</li>
+			<li class="li_text">
+				Rapide (Swift est conçu pour remplacer les langages basés sur C (C, C ++ et Objective-C))
+			</li>
+			<li class="li_text">
+				Sûr (Un comportement indéfini est l'ennemi de la sécurité et les erreurs de développement doivent être détectées avant que le logiciel ne soit en production).
+			</li><br>
+			Swift est officiellement supporté sur les systèmes d'exploitation Linux Ubuntu, iOS, iPadOS, macOS, watchOS et tvOS. <br><br>
+			(Version actuelle : 5.0 | 5.1 en cours de dev…) <br><br>
+			C’est en 2015 que Swift devient alors en Open-Source, c’est-à-dire libre d’accès au code source par tout le monde (swift.org). Grâce à cela, la communauté contribue à son amélioration pour que Swift soit un langage simple, efficace, pratique et durable dans le temps. <br>
+			L’apprentissage est accessible à tous, il existe différentes manières proposées par Apple pour pratiquer le langage Swift : <br><br>
+			<li class="li_text">
+				Playground | Application d’apprentissage interactif pour apprendre le Swift proposé par Apple
+			</li>
+			<li class="li_text">
+				XCode | l’IDE proposé par Apple
+			</li><br>
+			La syntaxe et les conventions d’écritures rendent le code plus compacté, simplifié et donc plus rapide.
+			D’après Apple, Swift serait 3x plus rapide que le langage python !
+
+			</p>
+		</div>
+	</div>
+
+	<div class="bottom">
+		<h2 class="title">• Sources :</h2>
+		<p class="text">
+			<li class="li_text">
+				<a href="https://fr.wikipedia.org/wiki/Chronologie_des_langages_de_programmation" target="_blank">https://fr.wikipedia.org/wiki/Chronologie_des_langages_de_programmation</a>
+			</li>
+			<li class="li_text">
+				<a href="https://swift.org/about/" target="_blank">https://swift.org/about/</a>
+			</li>
+			<li class="li_text">
+				<a href="https://www.apple.com/fr/swift/" target="_blank">https://www.apple.com/fr/swift/</a>
+			</li>
+			<li class="li_text">
+				<a href="https://openclassrooms.com/fr/courses/19980-apprenez-a-programmer-en-c/14118-un-monde-de-variables" target="_blank">https://openclassrooms.com/fr/courses/19980-apprenez-a-programmer-en-c/14118-un-monde-de-variables</a>
+			</li>
+			<li class="li_text">
+				The Swift Programming Language (Swift 5.1) – Livres Apple
+			</li>
+		</p>
+		<a href="#a_head" title="Retourner vers le haut de la page">Retourner en haut de la page.</a>
+		<!--Permet de remonter la page grace à l'ancre posé précédemment (line 21 : <a id="a_head"></a>), utile pour le confort de l'utilisateur comme sur mobile ou ordinateur lorsque la page est très grande.-->
+	</div>
+
+</body>
+</html>
