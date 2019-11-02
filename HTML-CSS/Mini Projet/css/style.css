@@ -1,0 +1,47 @@
+/* Fiche CSS (Page HTML2) */
+
+/* Balises DIV manquantes */
+/* Images HTML2 à voir (PHP, Java, etc.) */
+
+@font-face {
+
+	font-family: "518-";
+	src: url('font-family/518--Regular.otf');
+
+}
+
+body {
+
+	background-color: black;
+
+}
+
+
+
+.title {
+
+	color: white;
+	font-family: "518-";
+
+}
+
+.text {
+
+	color: white;
+	font-family: "Arial";
+
+}
+
+.li_text {
+
+	color: white;
+	font-family: "Arial";
+
+}
+
+.subtitle {
+
+	color: white;
+	font-family: "Arial";
+
+}
