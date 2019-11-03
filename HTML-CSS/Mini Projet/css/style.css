@@ -1,8 +1,5 @@
 /* Fiche CSS (Page HTML2) */
 
-/* Balises DIV manquantes */
-/* Images HTML2 à voir (PHP, Java, etc.) */
-
 @font-face {
 
 	font-family: "518-";
@@ -10,13 +7,16 @@
 
 }
 
+/* Importe une police d'écriture, présent dans le dossier Font-Family */
+/* La police utilisé est gratuite à des fins personnels ou commercial "Free for personal & commercial use". Source : https://www.pixelsurplus.com/freebies/518-free-font */
+
 body {
 
 	background-color: black;
 
 }
 
-
+/* Met l'arrière-plan du contenue <body> en noir */
 
 .title {
 
@@ -25,12 +25,16 @@ body {
 
 }
 
+/* Met le contenu des class title en blanc et utilise la police 518-. Si la police est indisponible à l'utilisation, Arial sera alors utilisé */
+
 .text {
 
 	color: white;
 	font-family: "Arial";
 
 }
+
+/* Met le contenu des class text en blanc et utilise la police Arial */
 
 .li_text {
 
@@ -39,6 +43,8 @@ body {
 
 }
 
+/* Met le contenu des class li_text en blanc et utilise la police Arial */
+
 .subtitle {
 
 	color: white;
@@ -46,28 +52,39 @@ body {
 
 }
 
+/* Met le contenu des class subtitle en blanc et utilise la police Arial */
+
 .head {
 
-	position: absolute;
+	position: relative;
+	text-align: left;
 	top: 10px;
-	left: 10px;
-	right: 10px;
+	margin-left: 10px;
+	margin-right: 20px;
 }
+
+/* Positione la balise div avec comme nom de class head dans la page. */
 
 .center {
 
-	position: absolute;
-	top: 600px;
-	left: 10px;
-	right: 10px;
+	position: relative;
+	text-align: left;
+	top: 20px;
+	margin-left: 10px;
+	margin-right: 20px;
 
 }
+
+/* Positione la balise div avec comme nom de class center dans la page. */
+
 .bottom {
 
-	position: absolute;
-	top: 2100px;
-	left: 10px;
-	right: 10px;
+	position: relative;
+	text-align: left;
+	top: 40px;
+	margin-left: 10px;
+	margin-right: 20px;
+
 }
 
-
+/* Positione la balise div avec comme nom de class bottom dans la page. */
