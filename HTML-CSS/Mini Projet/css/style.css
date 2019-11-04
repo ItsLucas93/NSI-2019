@@ -18,14 +18,38 @@ body {
 
 /* Met l'arrière-plan du contenue <body> en noir */
 
+.head_title {
+
+	color: white;
+	font-family: "518-", "Arial";
+	text-align: center;
+
+}
+
+/* Met le contenu des class head_title en blanc et utilise la police 518-. Si la police est indisponible à l'utilisation, Arial sera alors utilisé */
+/* Place la balise au centre de la page */
+
+
+.head_subtitle {
+
+	color: white;
+	font-family: "Arial";
+	text-align: center;
+
+}
+
+/* Met le contenu des class head_subtitle en blanc, utilise la police Arial, et place la balise à gauche de la page */
+
 .title {
 
 	color: white;
 	font-family: "518-","Arial";
+	text-align: left;
 
 }
 
 /* Met le contenu des class title en blanc et utilise la police 518-. Si la police est indisponible à l'utilisation, Arial sera alors utilisé */
+/* Place la balise à gauche de la page */
 
 .text {
 
@@ -44,15 +68,6 @@ body {
 }
 
 /* Met le contenu des class li_text en blanc et utilise la police Arial */
-
-.subtitle {
-
-	color: white;
-	font-family: "Arial";
-
-}
-
-/* Met le contenu des class subtitle en blanc et utilise la police Arial */
 
 .head {
 
