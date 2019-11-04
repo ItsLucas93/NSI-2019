@@ -88,3 +88,12 @@ body {
 }
 
 /* Positione la balise div avec comme nom de class bottom dans la page. */
+
+.swift_png {
+
+	position: relative;
+	top: 7px;
+	left: 5px;
+}
+
+/* Positione la balise img avec comme nom de class swift_png dans la page. */
