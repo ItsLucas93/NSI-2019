@@ -93,3 +93,11 @@ code2 = {
 
 targerkey = code2.get(input("Entrez la clée"))
 print("Valeur(s) de la clé : ", targerkey)
+targetvalue = code1.get(input("Entrez la valeur"))
+print("Valeur(s) de la valeur : ", targetvalue)
+
+#EX 4
+if targetvalue not in code2:
+    print("Valeur incorect, vérifiez dans le dictionnaire")
+else:
+    print("Valeur dans le dictionnaire")
