@@ -4,6 +4,6 @@
 
 Liste des repertories :
 
->>> **Python** : Généralement les TP/DM faites en cours 
+**Python** : Généralement les TP/DM faites en cours 
 
 **HTML/CSS** : Mini-Projet Automne 2019
