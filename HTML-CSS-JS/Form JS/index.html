@@ -21,49 +21,55 @@
       <h4 class="">Identité :  </h4>
       </div>
 
-		<div class="champ">
+    <div class="champ">
+      <a>
       Sexe (*) : 
       <input type="radio" name="Sexe" value="Homme" required>
         Homme 
       <input type="radio" name="Sexe" value="Femme" required>
-        Femme </br>
-  		
-      </div>
+        Femme </a></br> </br>
+    </div>
 
 		<div class="champ">
 			Nom (*) :
   			<input type="text" name="nom" required>
-  		</div>
+  	</div>
 
 		<div class="champ">
 			Prénom (*) :
   			<input type="text" name="prenom" required>
-  		</div>
+  	</div>
 
 		<div class="champ">
 			Âge (*) :
   			<input type="number" name="age" min="13" required>
-  		</div>
+  	</div>
 
 		<div class="champ">
 			Pseudo (*) :
   			<input type="text" name="pseudo" required>
-  		</div>
+  	</div>
 
 		<div class="champ">
 			E-mail (*) :
   			<input type="email" name="email" required>
-  		</div>
+  	</div>
 
     <div class="champ">
       Password (*) :
-        <input type="password" id="pswd" required>
-      </div>
+          <input type="password" id="psw" name="psw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
 
-    <div class="champ">
-      Confirm Password (*) :
-        <input type="password" id="confirmpswd" required>
-      </div>
+          <input type="checkbox" onclick="myFunction()">Show Password
+
+    </div>
+
+    <div id="message">
+      <h3>Le mot de passe doit contenir :</h3>
+      <p id="letter" class="invalid">Un <b>lettre minuscule</b></p>
+      <p id="capital" class="invalid">Une <b>lettre majuscule</b>.</p>
+      <p id="number" class="invalid">Un <b>nombre</b></p>
+      <p id="length" class="invalid"><b>+ 8 charactères</b></p>
+    </div>
 
     <div class="champ">
       <h4 class="">Calcul de l'IMC :  </h4>
@@ -90,10 +96,10 @@
       </div>
 
     <div class="champ">
-      Pays (*) : (Seul les voisins de la France sont sélectionnable) <Br> <Br>
+      Pays (*) : (Seul les voisins de la France sont sélectionnable dont la France) <Br> <Br>
 
       <select name="Pays" required>
-           <option> Sélectionnez votre pays de résidence :  </option>
+           <option disabled> Sélectionnez votre pays de résidence :  </option>
            <option value="France"> France </option>
            <option value="Luxembourg">Luxembourg</option>
            <option value="Allemagne"> Allemagne </option>
@@ -104,25 +110,84 @@
 
           </select>  </br> </br>
     </div>
-          <input type="checkbox" name="Mails" class="consent" required>Vous acceptez, par le biais de ce formulaire, le traitement de vos informations, dans le cadre de votre démarche de création d'identité internet. Vous receverez en boîte dialogue votre IMC calculée précédement.</br> </br>
+          Vous acceptez, par le biais de ce formulaire, le traitement de vos informations, dans le cadre de votre démarche de création d'identité internet. Vous receverez en boîte dialogue votre IMC calculée précédement.</br> </br>
  
       
-  		<input type="submit" value="Envoyer" onClick="pswd();">
+  		<input type="submit" value="Envoyer">
   		</div>
 	</form>
 
 
+<script type="text/javascript" id="verifypasswd">
+
+var myInput = document.getElementById("psw");
+var letter = document.getElementById("letter");
+var capital = document.getElementById("capital");
+var number = document.getElementById("number");
+var length = document.getElementById("length");
+
+myInput.onfocus = function() {
+  document.getElementById("message").style.display = "block";
+}
+
+myInput.onblur = function() {
+  document.getElementById("message").style.display = "none";
+}
+
+
+myInput.onkeyup = function() {
+
+  var lowerCaseLetters = /[a-z]/g;
+  if(myInput.value.match(lowerCaseLetters)) {
+    letter.classList.remove("invalid");
+    letter.classList.add("valid");
+  } else {
+    letter.classList.remove("valid");
+    letter.classList.add("invalid");
+}
+
+  var upperCaseLetters = /[A-Z]/g;
+  if(myInput.value.match(upperCaseLetters)) {
+    capital.classList.remove("invalid");
+    capital.classList.add("valid");
+  } else {
+    capital.classList.remove("valid");
+    capital.classList.add("invalid");
+  }
+
+  var numbers = /[0-9]/g;
+  if(myInput.value.match(numbers)) {
+    number.classList.remove("invalid");
+    number.classList.add("valid");
+  } else {
+    number.classList.remove("valid");
+    number.classList.add("invalid");
+  }
+
+  if(myInput.value.length >= 8) {
+    length.classList.remove("invalid");
+    length.classList.add("valid");
+  } else {
+    length.classList.remove("valid");
+    length.classList.add("invalid");
+  }
+}
+</script>
+
 <script type="text/javascript">
 
-function pswd() {
-  var password = document.getElementById("pswd").value;
-  var confirmPassword = document.getElementById("confirmpswd").value;
-  if (password != confirmPassword) {
-      alert("Mot de passe ne correspondent pas.");
-      return false;
+function myFunction() {
+  var x = document.getElementById("psw");
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
   }
-  return true;
 }
+
+</script>
+
+<script type="text/javascript" id="IMC">
 
 function IMC (kg,m) {
     var IMCresult = kg / (m*m);
