@@ -1,16 +1,44 @@
 form.foinfoin {
+
     display: table;
+    background-color: #9cbce0;
+    margin: 50px auto;
+    padding: 10px;
+    border-radius: 5px;
+    width: 700px;
+
 }
 
 div.foinfoin {
+
     display: table-row;
+
 }
 
 label, input {
+
     display: table-cell;
     margin-bottom: 10px;
+
 }
 
 label {
+
     padding-right: 10px;
+
+}
+
+.Title {
+
+    font-size: 24px;
+    text-align: center;
+    padding-top: 10px;
+
+}
+
+.subtitle {
+
+    font-size: 20px;
+    text-align: center;
+
 }

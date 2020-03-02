@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-	<title>Formulaire d'identité</title>
+	<title>Formulaire d'identité internet</title>
 
 	<meta charset="utf-8">
 
@@ -10,51 +10,98 @@
 
 <body>
 
-	<form class="foinfoin">
-		<div class="foinfoin">
-			<label>Sexe :</label>
+  <div>
+    <h1 class="Title">Formulaire d'identité internet</h1>
+    <p class="subtitle">Créez votre formulaire et recevez en boîte dialogue votre IMC !</p>
+  </div>
 
-  			<input type="radio" name="sexe" id="Masculin" value="Masculin">
-  				<label for="Masculin">Masculin</label>
-  			<input type="radio" name="sexe" id="Féminin" value="Féminin">
-  				<label for="Féminin">Féminin</label>
-  		</div>
+	<form class="foinfoin" name="foinfoin">
 
 		<div class="foinfoin">
-			<label>Nom :</label>
+      Sexe : 
+      <input type="radio" name="Sexe" value="Homme" required>
+        Homme 
+      <input type="radio" name="Sexe" value="Femme" required>
+        Femme </br>
+  		
+      </div>
+
+		<div class="foinfoin">
+			Nom :
   			<input type="text" name="nom" required>
   		</div>
 
 		<div class="foinfoin">
-			<label>Prénom :</label>
+			Prénom :
   			<input type="text" name="prenom" required>
   		</div>
 
 		<div class="foinfoin">
-			<label>Âge :</label>
+			Âge :
   			<input type="text" name="age" required>
   		</div>
 
 		<div class="foinfoin">
-			<label>Pseudo :</label>
+			Pseudo :
   			<input type="text" name="pseudo" required>
   		</div>
 
 		<div class="foinfoin">
-			<label>Password :</label>
-  			<input type="password" name="mot de passe" required>
+			E-mail :
+  			<input type="email" name="email" required>
   		</div>
+
+    <div class="foinfoin">
+      Password :
+        <input type="password" name="mot de passe" required>
+      </div>
 
 		<div class="foinfoin">
-			<label>Nom :</label>
-  			<input type="text" name="nom" required>
+			Masse (en kg):
+  			<input type="number" name="kg" min="1" required>
   		</div>
-  		
- 
 
+    <div class="foinfoin">
+      Taille (en m) :
+        <input type="number" name="m" min="1" required>
+        <input type="button" name="Verif" value="Vérifier" onClick="IMC()">
+    </div>
+		
+    <div class="foinfoin">
+      Pays : (Seul les voisins de la France sont sélectionnable) <Br> <Br>
+
+      <select name="Pays" required>
+           <option value=""> Sélectionnez votre pays de résidence :  </option>
+           <option value="France"> France </option>
+           <option value="Luxembourg">Luxembourg</option>
+           <option value="Allemagne"> Allemagne </option>
+           <option value="Espagne"> Espagne </option>
+           <option value="Angleterre"> Angleterre </option>
+           <option value="Belgique"> Belgique </option>
+           <option value="Italie">Italie</option>
+
+          </select>  </br> </br>
+    </div>
+          <input type="checkbox" name="Mails" class="consent" required>Vous acceptez, par le biais de ce formulaire, le traitement de vos informations, dans le cadre de votre démarche de création d'identité internet. Vous receverez en boîte dialogue votre IMC calculée précédement.</br> </br>
+ 
+      
   		<input type="submit" value="Envoyer">
   		</div>
 	</form>
+
+
+<script type="text/javascript">
+
+var kg = parseInt(document.forms["foinfoin"].elements["kg"], 10);
+var mtemp = parseInt(document.forms["foinfoin"].elements["m"], 10);
+var m = mtemp * mtemp;
+
+IMC = function IMC (m,kg) {
+    var IMCresult = kg / (m*m);
+    alert(IMCresult);
+}
+
+</script>
 
 </body>
 </html>
