@@ -15,10 +15,14 @@
     <p class="subtitle">Créez votre formulaire et recevez en boîte dialogue votre IMC !</p>
   </div>
 
-	<form class="foinfoin" name="foinfoin">
+	<form class="champ" name="champ">
 
-		<div class="foinfoin">
-      Sexe : 
+    <div class="champ">
+      <h4 class="">Identité :  </h4>
+      </div>
+
+		<div class="champ">
+      Sexe (*) : 
       <input type="radio" name="Sexe" value="Homme" required>
         Homme 
       <input type="radio" name="Sexe" value="Femme" required>
@@ -26,52 +30,70 @@
   		
       </div>
 
-		<div class="foinfoin">
-			Nom :
+		<div class="champ">
+			Nom (*) :
   			<input type="text" name="nom" required>
   		</div>
 
-		<div class="foinfoin">
-			Prénom :
+		<div class="champ">
+			Prénom (*) :
   			<input type="text" name="prenom" required>
   		</div>
 
-		<div class="foinfoin">
-			Âge :
-  			<input type="text" name="age" required>
+		<div class="champ">
+			Âge (*) :
+  			<input type="number" name="age" min="13" required>
   		</div>
 
-		<div class="foinfoin">
-			Pseudo :
+		<div class="champ">
+			Pseudo (*) :
   			<input type="text" name="pseudo" required>
   		</div>
 
-		<div class="foinfoin">
-			E-mail :
+		<div class="champ">
+			E-mail (*) :
   			<input type="email" name="email" required>
   		</div>
 
-    <div class="foinfoin">
-      Password :
-        <input type="password" name="mot de passe" required>
+    <div class="champ">
+      Password (*) :
+        <input type="password" id="pswd" required>
       </div>
 
-		<div class="foinfoin">
+    <div class="champ">
+      Confirm Password (*) :
+        <input type="password" id="confirmpswd" required>
+      </div>
+
+    <div class="champ">
+      <h4 class="">Calcul de l'IMC :  </h4>
+      </div>
+
+		<div class="champ">
 			Masse (en kg):
-  			<input type="number" name="kg" min="1" required>
+  			<input type="number" id='kg' min="1" step="any">
   		</div>
 
-    <div class="foinfoin">
+    <div class="champ">
       Taille (en m) :
-        <input type="number" name="m" min="1" required>
-        <input type="button" name="Verif" value="Vérifier" onClick="IMC()">
+        <input type="number" id='m' min="1" step="any">
+        <input type="button" name="Verif" value="Calculer l'IMC" onClick="IMC(parseFloat(document.getElementById('kg').value, 10), parseFloat(document.getElementById('m').value, 10));">
     </div>
-		
-    <div class="foinfoin">
-      Pays : (Seul les voisins de la France sont sélectionnable) <Br> <Br>
+
+    <div class="champ">
+      IMC (*) :
+        <input type="number" id='kg' step="any" required>
+      </div>
+
+    <div class="champ">
+      <h4 class="">Pays de résidence :</h4>
+      </div>
+
+    <div class="champ">
+      Pays (*) : (Seul les voisins de la France sont sélectionnable) <Br> <Br>
 
       <select name="Pays" required>
-           <option value=""> Sélectionnez votre pays de résidence :  </option>
+           <option> Sélectionnez votre pays de résidence :  </option>
            <option value="France"> France </option>
            <option value="Luxembourg">Luxembourg</option>
            <option value="Allemagne"> Allemagne </option>
@@ -85,18 +107,24 @@
           <input type="checkbox" name="Mails" class="consent" required>Vous acceptez, par le biais de ce formulaire, le traitement de vos informations, dans le cadre de votre démarche de création d'identité internet. Vous receverez en boîte dialogue votre IMC calculée précédement.</br> </br>
  
       
-  		<input type="submit" value="Envoyer">
+  		<input type="submit" value="Envoyer" onClick="pswd();">
   		</div>
 	</form>
 
 
 <script type="text/javascript">
 
-var kg = parseInt(document.forms["foinfoin"].elements["kg"], 10);
-var mtemp = parseInt(document.forms["foinfoin"].elements["m"], 10);
-var m = mtemp * mtemp;
+function pswd() {
+  var password = document.getElementById("pswd").value;
+  var confirmPassword = document.getElementById("confirmpswd").value;
+  if (password != confirmPassword) {
+      alert("Mot de passe ne correspondent pas.");
+      return false;
+  }
+  return true;
+}
 
-IMC = function IMC (m,kg) {
+function IMC (kg,m) {
     var IMCresult = kg / (m*m);
     alert(IMCresult);
 }
