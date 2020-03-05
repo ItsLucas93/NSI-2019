@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <title>Formulaire d'identité internet</title>
+
+  <meta charset="utf-8">
+
+  <link rel="stylesheet" type="text/css" href="css/form.css">
+</head>
+
+<body>
+
+  <div>
+    <h1 class="Title">Formulaire de devis pour travaux</h1>
+    <p class="subtitle">Créez l'endroit de vos rêves en commençant par l'estimation des travaux. </br>Préstataire : ActiCraft (Par Lucas)</p>
+  </div>
+
+  <form class="champ" name="champ" action="">
+
+    <div class="champ">
+      <h4 class="">Identité :  </h4>
+      </div>
+
+    <div class="champ">
+      Nom (*) :
+        <input type="text" name="nom" required>
+    </div>
+
+    <div class="champ">
+      Prénom (*) :
+        <input type="text" name="prenom" required>
+    </div>
+
+    <div class="champ">
+      Email (*) :
+        <input type="email" name="email">
+    </div>
+
+    <div class="champ">
+      Organisation :
+        <input type="text" name="prenom">
+    </div>
+
+    <div class="champ">
+      <h4 class="">Devis :  </h4>
+      </div>
+
+    <div class="champ">
+      Surface (*) [Prix : 1000€/m² TTC] :
+        <input type="number" name="surface" id="surfacevoulu" required>
+    </div>
+
+      <p>
+        <script type="text/javascript">document.write("Prix HT :" + calcprixht());</script>
+      </p>
+
+      <input type="submit" value="Envoyer" onclick="alert()">
+      </div>
+  </form>
+
+
+
+<script type="text/javascript" id="calc">
+
+var prixht = calcprixht(parseFloat(document.getElementById('surfacevoulu').value)); 
+var prixttc = calcprixttc(); 
+var comission = calcprixcomission(); 
+var total = calcprixtotal(); 
+
+function calcprixht (arg) {
+    var temp = parseFloat(document.getElementById('surfacevoulu').value);
+    var prixmcarre = 1000;
+    var price = temp * 1000;
+
+    return price;
+
+}
+
+function calcprixttc (arg) {
+    var temp = prixht;
+    var tva = 1.2;
+    var price = tva * temp;
+
+    return price;
+
+}
+
+function calcprixcomissionc (arg) {
+    var temp = prixttc;
+    var comission1 = 0.15;
+    var comission2 = 0.1;
+    var verif = 1000000;
+
+    if prixttc > verif {
+      var price = comission1 * temp;
+      return price;
+    }
+
+    else {
+      var price = comission2 * temp;
+      return price;
+    }    
+}
+
+function calcprixtotal (arg) {
+    var temp = calcprixttc + comission;
+    return calcprixtotal; 
+}
+
+function alert () {
+    alert("Prix (sans TVA) :" + prixht + "\nPrix (avec TVA) : " + prixttc + "\nComission : " + comission + "\nCoût total :" + total);
+}
+
+
+
+</script>
+
+</body>
+</html>
