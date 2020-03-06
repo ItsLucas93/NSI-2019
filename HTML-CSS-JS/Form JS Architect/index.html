@@ -3,6 +3,7 @@
 <head>
   <title>Formulaire d'identité internet</title>
 
+  <script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
   <meta charset="utf-8">
 
   <link rel="stylesheet" type="text/css" href="css/form.css">
@@ -42,19 +43,31 @@
     </div>
 
     <div class="champ">
-      <h4 class="">Devis :  </h4>
-      </div>
+      <h4 class="">Demande :  </h4>
+    </div>
 
     <div class="champ">
       Surface (*) [Prix : 1000€/m² TTC] :
-        <input type="number" name="surface" id="surfacevoulu" required>
+        <input type="number" name="surface" id="surfacevoulu" onChange="calcprixht(),calcprixttc(),calcprixtotal(),calcprixcomission()" required>
     </div>
 
-      <p>
-        <script type="text/javascript">document.write("Prix HT :" + calcprixht());</script>
-      </p>
+    <div class="champ">
+      <h4 class="">Devis :  </h4>
+    </div>
 
-      <input type="submit" value="Envoyer" onclick="alert()">
+      Prix HT :
+      <input type="text" name="ht" id="ht">
+
+      Prix TTC (20% TVA) :
+      <input type="text" name="TTC" id="TTC">
+
+      Comission : 
+      <input type="text" name="comission" id="comission">
+
+      Coût Total :
+      <input type="text" name="total" id="total">
+
+      <input type="submit" value="Envoyer" onclick="">
       </div>
   </form>
 
@@ -62,56 +75,72 @@
 
 <script type="text/javascript" id="calc">
 
-var prixht = calcprixht(parseFloat(document.getElementById('surfacevoulu').value)); 
-var prixttc = calcprixttc(); 
-var comission = calcprixcomission(); 
-var total = calcprixtotal(); 
-
-function calcprixht (arg) {
-    var temp = parseFloat(document.getElementById('surfacevoulu').value);
+function calcprixht () {
+    var temp = document.getElementById('surfacevoulu').value;
     var prixmcarre = 1000;
     var price = temp * 1000;
 
-    return price;
-
+    document.form.ht.value = price;
 }
 
-function calcprixttc (arg) {
-    var temp = prixht;
+function calcprixttc () {
+    var temp = parseFloat(document.getElementById('surfacevoulu').value);
+    var prixmcarre = 1000;
+    var prixht = temp * 1000;
     var tva = 1.2;
     var price = tva * temp;
 
-    return price;
+    document.form.TTC.value = price;
 
 }
 
-function calcprixcomissionc (arg) {
-    var temp = prixttc;
+function calcprixcomission () {
+    var temp = parseFloat(document.getElementById('surfacevoulu').value);
+    var prixmcarre = 1000;
+    var prixht = temp * 1000;
+    var tva = 1.2;
+    var ttc = tva * temp;
+
     var comission1 = 0.15;
     var comission2 = 0.1;
     var verif = 1000000;
 
-    if prixttc > verif {
+    if (prixttc) {
+      prixttc > verif
       var price = comission1 * temp;
-      return price;
+      document.form.comission.value = price;
     }
 
     else {
       var price = comission2 * temp;
-      return price;
+      document.form.comission.value = price;
     }    
 }
 
-function calcprixtotal (arg) {
-    var temp = calcprixttc + comission;
-    return calcprixtotal; 
+function calcprixtotal () {
+    var temp = parseFloat(document.getElementById('surfacevoulu').value);
+    var prixmcarre = 1000;
+    var prixht = temp * 1000;
+    var tva = 1.2;
+    var ttc = tva * temp;
+
+    var comission1 = 0.15;
+    var comission2 = 0.1;
+    var verif = 1000000;
+
+    if (ttc) {
+      ttc > verif
+      var comission = comission1 * temp;
+    }
+
+    else {
+      var comission = comission2 * temp;
+    }    
+
+    var calcprixtotal = ttc + comission;
+
+    document.form.total.value = calcprixtotal; 
 }
-
-function alert () {
-    alert("Prix (sans TVA) :" + prixht + "\nPrix (avec TVA) : " + prixttc + "\nComission : " + comission + "\nCoût total :" + total);
-}
-
-
 
 </script>
 
