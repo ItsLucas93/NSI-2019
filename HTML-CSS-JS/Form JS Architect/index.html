@@ -14,7 +14,7 @@
     <p class="subtitle">Créez l'endroit de vos rêves en commençant par l'estimation des travaux. </br>Préstataire : ActiCraft (Par Lucas)</p>
   </div>
 
-  <form class="champ" name="champ" action="">
+  <form class="champ" name="form" action="">
 
     <div class="champ">
       <h4 class="">Identité :  </h4>
@@ -74,44 +74,62 @@
 <script type="text/javascript" id="calc">
 
 function calcprixht () {
+    // Calcul du prix HT
     var temp = document.getElementById('surfacevoulu').value;
     var prixmcarre = 1000;
     var price = temp * 1000;
 
-    document.form.ht.value = price;
+    // Affichage au niveau de Form -> Input -> HT
+    document.form.ht.value = price + "€";
 }
 
 function calcprixttc () {
+    // Calcul du prix HT
     var temp = parseFloat(document.getElementById('surfacevoulu').value);
     var prixmcarre = 1000;
     var prixht = temp * 1000;
-    var tva = 1.2;
-    var price = tva * temp;
 
-    document.form.TTC.value = price;
+    // Calcul du prix TTC
+    var tva = 1.2;
+    var price = tva * prixht;
+
+    // Affichage au niveau de Form -> Input -> TTC
+    document.form.TTC.value = price + "€";
 
 }
 
 function calcprixcomission () {
+    // Calcul du prix HT
     var temp = parseFloat(document.getElementById('surfacevoulu').value);
     var prixmcarre = 1000;
     var prixht = temp * 1000;
-    var tva = 1.2;
-    var ttc = tva * temp;
 
+    // Calcul du prix TTC
+    var tva = 1.2;
+    var ttc = tva * prixht;
+
+    // Calcul de la comission
     var comission1 = 0.15;
     var comission2 = 0.1;
     var verif = 1000000;
 
-    if (prixttc) {
-      prixttc > verif
-      var price = comission1 * temp;
-      document.form.comission.value = price;
-    }
+    // Si TTC est inférieur à verif(1.000.000€), comission 1 s'applique (15%)
+    if (ttc < verif) {
 
+      var price = comission1 * ttc;
+
+      // Affichage au niveau de Form -> Input -> Comission
+      document.form.comission.value = price + "€";
+    
+    }
+    
+    // Comission 2 s'applique (10%) car supérieur à verif(1.000.000€)
     else {
-      var price = comission2 * temp;
-      document.form.comission.value = price;
+      
+      var price = comission2 * ttc;
+      
+      // Affichage au niveau de Form -> Input -> Comission
+      document.form.comission.value = price + "€";
     }    
 }
 
@@ -119,25 +137,25 @@ function calcprixtotal () {
     var temp = parseFloat(document.getElementById('surfacevoulu').value);
     var prixmcarre = 1000;
     var prixht = temp * 1000;
+
     var tva = 1.2;
-    var ttc = tva * temp;
+    var ttc = tva * prixht;
 
     var comission1 = 0.15;
     var comission2 = 0.1;
     var verif = 1000000;
 
-    if (ttc) {
-      ttc > verif
-      var comission = comission1 * temp;
+    if (ttc < verif) {
+      var comission = comission1 * ttc;
     }
 
     else {
-      var comission = comission2 * temp;
+      var comission = comission2 * ttc;
     }    
 
     var calcprixtotal = ttc + comission;
 
-    document.form.total.value = calcprixtotal; 
+    document.form.total.value = calcprixtotal + "€"; 
 }
 
 </script>
