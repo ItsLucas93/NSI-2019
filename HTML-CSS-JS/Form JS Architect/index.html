@@ -46,7 +46,8 @@
 
     <div class="champ">
       Surface (*) [Prix : 1000€/m² TTC] :
-        <input type="number" name="surface" id="surfacevoulu" onChange="calcprixht(),calcprixttc(),calcprixtotal(),calcprixcomission()" required>
+      <!-- OnChange s'occupe d'appeler les fonctions JS lors de la modification d'entrées sur cette balise (surface)-->        
+      <input type="number" name="surface" id="surfacevoulu" onChange="calcprixht(),calcprixttc(),calcprixtotal(),calcprixcomission()" required>
     </div>
 
     <div class="champ">
